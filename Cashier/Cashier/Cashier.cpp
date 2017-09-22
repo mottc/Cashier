@@ -7,7 +7,9 @@
 
 using namespace std;
 
-
+string name;
+int age;
+double balance;
 //utf-8转换到GB3212  
 char* U2G(const char* utf8)
 {
@@ -102,16 +104,29 @@ void customerRegister(SQLiteHelper *sqliteHelper)
 	cout << "新用户编号为：" << sqliteHelper->getLastID() << endl << endl;
 }
 
-static int callback(void *data, int argc, char **argv, char **azColName, int a) {
+static int callback(void *data, int argc, char **argv, char **azColName) {
 	int i;
-	fprintf(stderr, "%s: ", (const char*)data);
+	//fprintf(stderr, "%s: ", (const char*)data);
 	for (i = 0; i<argc; i++) {
-		a = 99;
-		printf("%s = %s\n", azColName[i], argv[i] ? argv[i] : "NULL");
+		switch (i)
+		{
+		case 0:
+			name = U2G(argv[i]);
+			break;
+		case 1:
+			age = atoi(argv[i]);
+			break;
+		case 2:
+			balance = atof(argv[i]);
+			break;
+		default:
+			break;
+		}
 	}
 	printf("\n");
 	return 0;
 }
+
 void useCard(SQLiteHelper *sqliteHelper)
 {
 	cout << "请刷卡！（输入ID，表示从卡中读取的数据）" << endl;
@@ -153,7 +168,7 @@ void useCard(SQLiteHelper *sqliteHelper)
 		fprintf(stdout, "Operation done successfully\n");
 	}
 
-	sqlite3_close(db);
+	//sqlite3_close(db);
 	//nResult = sqliteHelper->rawQuery(sql, &nRow, &nCol, pResult);
 	//nResult = sqlite3_get_table(db, strSql.c_str(), &pResult, &nRow, &nCol, &errmsg);
 	/*if (nResult != SQLITE_OK)
@@ -179,7 +194,7 @@ void useCard(SQLiteHelper *sqliteHelper)
 
 
 
-	Customer customer("王某某", 18, 452.36);
+	Customer customer(name, age, balance);
 	cout << endl << "成功读取卡内信息：" << endl;
 	cout << "*************************" << endl;
 	cout << "  姓名：" << customer.getName() << endl;
