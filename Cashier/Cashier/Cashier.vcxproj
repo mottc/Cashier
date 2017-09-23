@@ -145,12 +145,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Customer.h" />
+    <ClInclude Include="Operation.h" />
     <ClInclude Include="SQLiteHelper.h" />
+    <ClInclude Include="Transcode.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Cashier.cpp" />
     <ClCompile Include="Customer.cpp" />
+    <ClCompile Include="Operation.cpp" />
     <ClCompile Include="SQLiteHelper.cpp" />
+    <ClCompile Include="Transcode.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

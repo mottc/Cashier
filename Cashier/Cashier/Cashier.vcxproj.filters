@@ -21,6 +21,12 @@
     <ClInclude Include="SQLiteHelper.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Transcode.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Operation.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Customer.cpp">
@@ -30,6 +36,12 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="SQLiteHelper.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Transcode.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Operation.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

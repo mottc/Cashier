@@ -11,8 +11,9 @@ public:
 	SQLiteHelper();
 	virtual ~SQLiteHelper();
 	int execSQL(const char *sql);
-	int rawQuery(const char *sql, int *row, int *column, char **result);
 	int openDB(char *path);
 	sqlite_int64 getLastID();
 	void closeDB();
+	char** rawQuery(const char *sql, int *row, int *column, char **result);
+	
 };
