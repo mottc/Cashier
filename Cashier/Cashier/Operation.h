@@ -18,8 +18,11 @@ public:
 
 public:
 	void customerRegister();
-	void modifyInformation();
-	void useCard();
-	void customerDelete();
-	
+	string useCard();
+	void customerDelete(string ID);
+	void setName(string ID);
+	void setAge(string ID);
+	void cost(string ID);
+	void deposit(string ID);
+	void infoDisplay();
 };
