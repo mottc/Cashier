@@ -119,4 +119,5 @@ void main()
 			break;
 		}
 	} while (again);
+	delete operation;
 }
