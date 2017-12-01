@@ -9,7 +9,7 @@ Transcode::~Transcode()
 }
 
 
-//UTF-8到GB2312的转换  
+//from UTF-8 to GB2312  
 char* Transcode::U2G(const char* utf8)
 {
 	int len = MultiByteToWideChar(CP_UTF8, 0, utf8, -1, NULL, 0);
@@ -24,7 +24,7 @@ char* Transcode::U2G(const char* utf8)
 	return str;
 }
 
-//GB2312到UTF-8的转换  
+//from GB2312 to UTF-8
 char* Transcode::G2U(const char* gb2312)
 {
 	int len = MultiByteToWideChar(CP_ACP, 0, gb2312, -1, NULL, 0);
